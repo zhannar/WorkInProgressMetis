@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!-- Sorry no IE7 support! -->
+<!-- @see http://foundation.zurb.com/docs/index.html#basicHTMLMarkup -->
+
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" dir="ltr"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://www.digital.nyc/sites/all/themes/custom/ecohub_foundation_dnyc/favicon.ico" />
+<meta name="ecohub" content="heads/develop" />
+<meta name="dnyc" content="7.x-1.0" />
+<meta http-equiv="ImageToolbar" content="false" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="http://www.digital.nyc/map" />
+<link rel="shortlink" href="http://www.digital.nyc/map" />
+<meta property="og:site_name" content="Digital.NYC" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.digital.nyc/map" />
+<meta property="og:title" content="Map" />
+  <title>Map | Digital.NYC</title>
+  <link rel="stylesheet" href="http://www.digital.nyc/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" />
+<link rel="stylesheet" href="http://www.digital.nyc/sites/default/files/css/css_RT8IG7uA1zJOtl7AT2wPBM-CiQgvEyPx92dyMD7ScTc.css" />
+<link rel="stylesheet" href="http://www.digital.nyc/sites/default/files/css/css_QVIvxGqTpzmkmYRIxifm4zEiOt6AmcNOWx9fIee8H7Q.css" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" />
+<link rel="stylesheet" href="http://www.digital.nyc/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" />
+<link rel="stylesheet" href="http://www.digital.nyc/sites/default/files/css/css_xovkIXQ3JD9L-bEtx7ks3LvHUHLy_ajEofddRIuH7k8.css" />
+  <script src="http://www.digital.nyc/sites/default/files/js/js_MpKfe1sTh5JIVGCZ17DsAuT1rqAC38MLLlkjqjQ1X_k.js"></script>
+<script src="http://www.digital.nyc/sites/all/libraries/leaflet/dist/leaflet.js?o4gslr"></script>
+<script src="http://www.digital.nyc/sites/all/libraries/leaflet.markercluster/dist/leaflet.markercluster.js?o4gslr"></script>
+<script src="http://www.digital.nyc/sites/default/files/js/js_sAzYvoyk4vi9vCzHtwYiWCPYxtBepdLulhNlD7-5SxI.js"></script>
+<script>document.createElement( "picture" );</script>
+<script src="http://www.digital.nyc/sites/default/files/js/js_I-1QdHWOXkACIz93oPD9lMrf_0QtSIAH9eRnWfjZ_yg.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-53648205-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<script src="http://www.digital.nyc/sites/default/files/js/js_vKI0Xq-FdtQu8l6efYVYatKIS-PKZvkb_p81LbTOaw4.js"></script>
+<script src="http://www.digital.nyc/sites/default/files/js/js_56uzVcLvfvdC06oAmoaYTDF13s2TaDEnLL2n9-O_4AA.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"ecohub_foundation_dnyc","theme_token":"srxbGOXMomLs6eni_QnycL3etG4FicxK4RkmvA8RVTg","jquery_version":"1.10","js":{"sites\/all\/modules\/contrib\/picture\/picturefill2\/picturefill.min.js":1,"sites\/all\/modules\/contrib\/picture\/picture.min.js":1,"0":1,"sites\/all\/modules\/contrib\/addthis\/addthis.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/leaflet\/dist\/leaflet.js":1,"sites\/all\/libraries\/leaflet.markercluster\/dist\/leaflet.markercluster.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"http:\/\/www.digital.nyc\/misc\/vertical-tabs.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"1":1,"sites\/all\/libraries\/underscore\/underscore-min.js":1,"sites\/all\/libraries\/backbone\/backbone.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"2":1,"sites\/all\/modules\/custom\/dnyc_maps\/js\/dnyc_maps.js":1,"misc\/progress.js":1,"sites\/all\/modules\/custom\/dnyc_newsletter\/js\/dnyc_newsletter_modal.js":1,"sites\/all\/modules\/custom\/dnyc_newsletter\/js\/dnyc_newsletter_ga.js":1,"sites\/all\/modules\/custom\/dnyc_newsletter\/js\/dnyc_newsletter_detection_clicks.js":1,"sites\/all\/themes\/contrib\/zurb_foundation\/js\/vendor\/modernizr.js":1,"sites\/all\/themes\/custom\/ecohub_foundation_dnyc\/js\/foundation.min.js":1,"sites\/all\/themes\/custom\/ecohub_foundation_dnyc\/js\/libs.min.js":1,"sites\/all\/themes\/custom\/ecohub_foundation_dnyc\/js\/app.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/picture\/picture_wysiwyg.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/libraries\/leaflet\/dist\/leaflet.css":1,"sites\/all\/libraries\/leaflet.markercluster\/dist\/MarkerCluster.Default.css":1,"sites\/all\/libraries\/leaflet.markercluster\/dist\/MarkerCluster.css":1,"sites\/all\/modules\/custom\/dnyc_maps\/css\/dnyc_maps.css":1,"http:\/\/fonts.googleapis.com\/css?family=Roboto+Slab:300,400,700":1,"sites\/all\/themes\/contrib\/zurb_foundation\/css\/vertical-tabs.css":1,"sites\/all\/themes\/custom\/ecohub_foundation_dnyc\/css\/normalize.css":1,"sites\/all\/themes\/custom\/ecohub_foundation_dnyc\/css\/foundation.min.css":1,"profiles\/ecohub\/themes\/ecohub_foundation_base\/css\/ecohub_foundation_base.css":1,"sites\/all\/themes\/custom\/ecohub_foundation_dnyc\/css\/ecohub_foundation_dnyc.css":1,"sites\/all\/themes\/custom\/ecohub_foundation_dnyc\/fonts\/foundation-icons\/foundation-icons.css":1}},"addthis":{"async":false,"domready":true,"widget_url":"http:\/\/s7.addthis.com\/js\/300\/addthis_widget.js","addthis_config":{"pubid":"ra-55b8d3284dad2ef6","services_compact":"more","services_exclude":"","data_track_clickback":false,"ui_508_compliant":false,"ui_click":false,"ui_cobrand":"","ui_delay":0,"ui_header_background":"","ui_header_color":"","ui_open_windows":false,"ui_use_css":false,"ui_use_addressbook":false,"ui_language":"en"},"addthis_share":{"templates":{"twitter":"{{title}} {{url}} via @AddThis"}}},"urlIsAjaxTrusted":{"\/search":true,"\/system\/ajax":true,"\/map":true},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"currentPath":"map","currentPathIsAdmin":false,"leaflet_tiles":{"pattern":"https:\/\/api.tiles.mapbox.com\/v4\/{id}\/{z}\/{x}\/{y}.png?access_token={accessToken}","token":"pk.eyJ1IjoiZmxvZWRlc2lnbiIsImEiOiJmYTk1YjI5YmI0N2NkYjhiZGU5M2ZmZDg2NzljOGJkNiJ9.dZluyFLnDeQvCKMDExFMKQ","id":"floedesign.me422bgg"},"ajax":{"mailchimp-signup-subscribe-block-newsletter-footer-form-submit":{"callback":"dnyc_newsletter_ajax_submit","wrapper":"mailchimp-signup-subscribe-block-newsletter-footer-form-ajax-wrapper","event":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Subscribe"}}}});</script>
+  <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body class="html not-front not-logged-in no-sidebars page-map section-map" >
+  <div class="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <!--.page -->
+<div role="document" class="page">
+
+  <!--.l-header region -->
+  <header role="banner" class="l-header">
+
+    <!-- Site name, sponsors, and search box -->
+    <section class="l-skyline">
+      <div class="row">
+
+        <div class="medium-12 columns show-for-medium-up">
+          <a href="http://ibm.com/?cmp=idr&cpb=idr&ct=idroth&cr=digitalnyc&cm=s&ccy=zz" target="_blank" title="Sponsor: IBM" class="sponsor-ibm">
+          </a>
+        </div>
+
+        <div class="medium-3 columns site-logo-container">
+
+        </div>
+
+        <div class="medium-2 large-2 columns city-sponsors show-for-medium-up">
+          <a href="http://www1.nyc.gov/" target="_blank" title="Sponsor: City of New York" class="sponsor-nyc"></a>
+          <a href="http://www.nycedc.com/" target="_blank" title="Sponsor: New York City Economic Development Corporation" class="sponsor-nycedc"></a>
+        </div>
+
+        <div class="medium-6 large-5 columns">
+          <!--/Site-Wide Search -->
+          <section class="l-medium-up-site-search">
+
+          </section>
+          <!--/Site-Wide Search -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Small Screen Navigation Container -->
+    <section class="l-small-screen-nav-container">
+            <!--.top-bar -->
+            <div class="contain-to-grid">
+              <nav class="top-bar small-screen-nav" data-topbar  data-options="mobile_show_parent_link:true">
+          <ul class="title-area show-for-small-only">
+            <li class="name show-for-small-only">
+              <a href="/" class="home-link" title="Home" rel="home">
+                <img src="/sites/all/themes/custom/ecohub_foundation_dnyc/images/dnyc_logo.png" class="site-logo" title="Digital.NYC">
+              </a>
+            </li>
+            <li class="sponsor-topbar show-for-small-only">
+              <a href="http://ibm.com/?cmp=idr&cpb=idr&ct=idroth&cr=digitalnyc&cm=s&ccy=zz" target="_blank" class="sponsor-ibm show-for-small-only">
+              </a>
+            </li>
+            <li class="toggle-search search-icon"><a href="#" class="toggle-search"></a></li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+          </ul>
+          <section class="top-bar-section">
+            <div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-518"><a href="/about" class="title-about">About</a></li>
+<li class="leaf menu-mlid-359"><a href="/news" class="title-news">News</a></li>
+<li class="leaf menu-mlid-368"><a href="/startups" title="" class="title-startups">Startups</a></li>
+<li class="leaf menu-mlid-366"><a href="/events" class="title-events">Events</a></li>
+<li class="leaf menu-mlid-364"><a href="/jobs" class="title-jobs">Jobs</a></li>
+<li class="leaf menu-mlid-367"><a href="/investors" class="title-investors">Investors</a></li>
+<li class="leaf menu-mlid-360"><a href="/resources" class="title-resources">Resources</a></li>
+<li class="leaf menu-mlid-365"><a href="/courses" title="" class="title-courses">Courses</a></li>
+<li class="leaf menu-mlid-363"><a href="/workspaces" class="title-workspaces">Workspaces</a></li>
+<li class="leaf menu-mlid-223"><a href="/incubators" title="" class="title-incubators">Incubators</a></li>
+<li class="leaf menu-mlid-361"><a href="http://videos.digital.nyc" title="" class="title-videos">Videos</a></li>
+<li class="last leaf active-trail active menu-mlid-362"><a href="/map" title="" class="active-trail title-map active">Map</a></li>
+</ul></div>
+          </section>
+        </nav>
+            </div>
+            <!--/.top-bar -->
+    
+      <section class="l-small-only-site-search" style="display:none;">
+          <section class="block block-views block-views-exp-dnyc-search-page">
+  
+      
+    <form action="/search" method="get" id="views-exposed-form-dnyc-search-page" accept-charset="UTF-8"><div>
+
+<div class="site-search-box">
+  <div class="views-exposed-form row">
+    <div class="views-exposed-widgets clearfix medium-12 columns">
+      
+      <h2 class="search-form-label site-search">NYC's Hub for Tech and Startups</h2>
+      
+      <div class="row collapse">
+        <!-- Search Terms Filter -->   
+             
+        <div id="edit-keywords-wrapper" class="views-exposed-widget views-widget-filter-search_api_views_fulltext small-10 columns">
+
+                    <div class="views-widget">
+            <div class="form-item form-type-textfield form-item-keywords">
+ <input placeholder="Find Startups, Investors and more..." type="text" id="edit-keywords" name="keywords" value="" size="30" maxlength="128" class="form-text" />
+</div>
+          </div>
+                  </div> <!-- / Search Terms Filter -->
+        
+        <!-- Search Button -->
+        <div class="small-2 columns">
+          <div class="views-exposed-widget views-submit-button site-wide-search">
+            <button class="button expand form-submit" id="edit-submit-dnyc-search" name="" value="Search" type="submit">Search</button>
+          </div>
+        </div>
+      </div>
+
+    
+                            </div>
+  </div>
+</div></div></form>  
+  </section>      </section>
+
+    </section>
+    <!-- /Small Screen Navigation Container -->
+
+    <!-- Title, slogan and menu -->
+        <!-- End title, slogan and menu -->
+
+    
+  </header>
+  <!--/.l-header -->
+
+      <div class="row">
+      <div class="small-12 columns">
+        <h1 class="section-title">Map</h1>
+              </div>
+    </div>
+  
+  
+  
+  
+      <!--/Section Search -->
+    <section class="l-section-search">
+      <div class="search-bar section-color--map">
+  <div class="row">
+    <div class="columns">
+      <div id="dnyc-map-keywords">
+        <input type="text" placeholder="Search by Name or Keyword"/>
+        <button class="button expand form-submit"></button>
+      </div>
+  </div>
+</div>    </section>
+    <!--/Section Search -->
+  
+  <main role="main" class="row l-main">
+    <div class=" main columns">
+      
+      <a id="main-content"></a>
+
+      
+      
+                            
+      
+        
+      
+    <div class="map-submit-startup-link">
+  <a href="#" data-reveal-id="startup-submission-link">Add your startup <span class="fi-marker"></span></a>
+</div>
+<div id="startup-submission-link" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 class="node-title" id="modalTitle">Get Listed</h2>
+  <p>By adding your company profile to Digital.NYC your startup becomes an active part of the city’s official hub for technology.</p>
+
+<p>Startup listings for Digital.NYC are powered by Gust.com, the world’s largest platform for startup funding. You can update your free profile at any time through the Gust dashboard or even take things a step further by using your profile to leverage all the benefits Gust has to offer.</p>
+
+  <a href="https://gust.com/eco_hubs/digital-nyc/accounts/new" class="button light-blue" target="_blank">Create a Profile</a>
+
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+<div class="map-sponsors">
+  <a href="//www1.nyc.gov" target="_blank">
+    <img src="/sites/all/themes/custom/ecohub_foundation_dnyc/images/logo/nyc-digital-logo.gif" class="nycdigital-logo">
+  </a>
+  <a href="//www.internetweekny.com" target="_blank">
+    <img src="/sites/all/themes/custom/ecohub_foundation_dnyc/images/logo/logo_IWNY_2.png" class="internetweekny-logo">
+  </a>
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style "><a href="#" class="addthis_button_facebook"></a>
+<a href="#" class="addthis_button_twitter"></a>
+<a href="#" class="addthis_button_linkedin"></a>
+<a href="#" class="addthis_button_email"></a>
+</div>
+</div>
+
+
+<div class="dnyc-map">
+  
+  <div class="row">
+    <div class="medium-9 medium-push-3 columns">
+        <div id="dnyc-map-facets">
+  <script type="text/template" id="dnyc-map-facet-template">
+    
+    <% 
+      var contentTypes = {
+        'company'     : 'Startup',
+        'event'       : 'Event',
+        'investor'    : 'Investor',
+        'incubator'   : 'Incubator',
+        'workspace'   : 'Workspace',
+        'job'         : 'Job'
+      }; 
+    %>
+    
+    
+    <li class="map-facet facet-<%= type %> <%= active ? ' active': '' %>">
+      <i class="fi-check large"></i>
+      <%= contentTypes[type] %> <span class="count"><%= active ? count : '' %></span>
+    </li>
+  </script>
+</div>
+    <div id="dnyc-map-default">
+</div>
+    </div>
+  
+    <div class="medium-3 medium-pull-9 columns">
+      <div id="dnyc-map-results">
+</div>
+<script type="text/template" id="dnyc-map-results-template">
+  <div class="result-summary">
+    <strong>Showing <span id="dnyc-map-results-pageset"></span></strong> of <span id="dnyc-map-results-count"></span>
+  </div>
+
+<ul id="dnyc-map-results-container">
+</ul>
+<div id="dnyc-map-results-paginator">
+  <ul class="dnyc-map-paginator">
+    <li class="back">
+      <a>Back</a>
+    </li>
+    <li class="next">
+      <a>Next</a>
+    </li>
+  </ul>
+  <ul class="dnyc-map-pages">
+  </ul>
+</div>
+</script>
+<script type="text/template" id="dnyc-map-result-template">
+  
+<% 
+  var contentTypes = {
+    'company'     : 'Startup',
+    'event'       : 'Event',
+    'investor'    : 'Investor',
+    'incubator'   : 'Incubator',
+    'workspace'   : 'Workspace',
+    'job'         : 'Job'
+  }; 
+%>  
+<a href="<%= uri %>" class="dnyc-map-result-link">
+  <li class="dnyc-map-result <%= bundle %>">  
+    <h4 class="dnyc-map-result-type <%= bundle %>">
+      <%= contentTypes[bundle] %>
+    </h4>
+
+    <div class="dnyc-map-result-title">
+      <%= title %>
+    </div>
+  </li>
+</a>
+
+</script>    </div>
+  </div>
+
+</div>
+  
+      </div>
+    <!--/.main region -->
+
+    
+      </main>
+  <!--/.main-->
+
+  <!--.l-footer-->
+  <footer class="l-footer" role="contentinfo">
+          <div class="row">
+        <div class="footer large-12 columns">
+            
+<div id="block-mailchimp-signup-newsletter-footer" class="block block-mailchimp-signup block-mailchimp-signup-newsletter-footer">
+  <div class="content">
+    <div id="dnyc-newsletter-form-footer" class="reveal-modal" data-reveal>
+        <h2 class="node-title">Stay up to speed!</h2>
+        <p class="newsletter-description">Subscribe to <span class="newsletter-text-highlight">Digital.NYC Weekly</span> for NYC's tech & startup week in review, plus upcoming highlights.</p>
+        
+                
+        <div id="mailchimp-signup-subscribe-block-newsletter-footer-form-ajax-wrapper">
+          <form class="mailchimp-signup-subscribe-form" action="/map" method="post" id="mailchimp-signup-subscribe-block-newsletter-footer-form" accept-charset="UTF-8"><div><div id="mailchimp-newsletter-436953-mergefields" class="mailchimp-newsletter-mergefields"><div class="form-item form-type-textfield form-item-mergevars-EMAIL">
+  <label class="element-invisible" for="edit-mergevars-email">Email Address <span class="form-required" title="This field is required.">*</span></label>
+ <input placeholder="Your email" type="text" id="edit-mergevars-email" name="mergevars[EMAIL]" value="" size="25" maxlength="128" class="form-text required" />
+</div>
+<div class="form-item form-type-textfield form-item-mergevars-FNAME">
+  <label class="element-invisible" for="edit-mergevars-fname">First Name </label>
+ <input placeholder="First Name" type="text" id="edit-mergevars-fname" name="mergevars[FNAME]" value="" size="25" maxlength="128" class="form-text" />
+</div>
+<div class="form-item form-type-textfield form-item-mergevars-LNAME">
+  <label class="element-invisible" for="edit-mergevars-lname">Last Name </label>
+ <input placeholder="Last Name" type="text" id="edit-mergevars-lname" name="mergevars[LNAME]" value="" size="25" maxlength="128" class="form-text" />
+</div>
+</div><input type="hidden" name="form_build_id" value="form-kWEjyCZmPjzJOUSA_uD2F8zYfnxo-EunvyNHsneAOFI" />
+<input type="hidden" name="form_id" value="mailchimp_signup_subscribe_block_newsletter_footer_form" />
+<button id="mailchimp-signup-subscribe-block-newsletter-footer-form-submit" name="op" value="Subscribe" type="submit" class="form-submit">Subscribe</button>
+</div></form>        </div>
+        
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    
+    <div class="row">
+
+      <div class="small-12 medium-3 large-2 columns footer-site-logo">
+        <a href="/" title="Home" rel="home">
+          <img src="/sites/all/themes/custom/ecohub_foundation_dnyc/images/dnyc_logo.png" title="Digital.NYC">
+        </a>
+      </div>
+
+      <div class="footer-social small-6 medium-2 columns">
+        <a href="https://www.facebook.com/theDigitalNYC" class="button tiny radius button-dark-small fi-social-facebook"></a>
+        <a href="https://twitter.com/digitalnyc" class="button tiny radius button-dark-small fi-social-twitter"></a>
+      </div>
+
+      <div class="footer-subscribe small-12 medium-3 columns">
+        <a href="#" class="button tiny radius button-dark-small" data-reveal-id="dnyc-newsletter-form-footer">Subscribe to Newsletter</a>
+      </div>
+
+      <div class="footer-partners small-12 medium-4 large-5 end columns">
+        <a href="/madeinny-application" title="Made in NY">
+          <img src="/sites/all/themes/custom/ecohub_foundation_dnyc/images/footer/made-in-ny.png" title="Made in NY">
+        </a>
+        <a href="/ibmcloud" title="Launched on Bluemix">
+          <img src="/sites/all/themes/custom/ecohub_foundation_dnyc/images/footer/launched-bluemix.png" title="Launched on Bluemix">
+        </a>
+      </div>
+    </div>
+
+          <div class="row">
+        <div class="copyright small-12 columns">
+          <section class="copyright-text">
+            &copy; 2016 Digital.NYC All rights reserved.          </section>
+
+          <section class="block-footer-menu">
+            <ul class="menu"><li class="first leaf"><a href="/privacy">Privacy Policy</a></li>
+<li class="leaf"><a href="/terms">Terms of Service</a></li>
+<li class="last leaf"><a href="/mediaroom">Media</a></li>
+</ul>          </section>
+
+        </div>
+
+        <div class="sponsor-trademark small-12 columns">
+          IBM and the IBM logo are trademarks of International Business Machines Corp., registered in many jurisdictions worldwide.        </div>
+
+      </div>
+    
+  </footer>
+  <!--/.footer-->
+
+  </div>
+<!--/.page -->
+  <script src="http://www.digital.nyc/sites/default/files/js/js_7Ukqb3ierdBEL0eowfOKzTkNu-Le97OPm-UqTS5NENU.js"></script>
+<script>(function(t,e,s,o)
+{var c,n,l;t.SMCX=t.SMCX||[],e.getElementById(o)||(c=e.getElementsByTagName(s),n=c[c.length-1],l=e.createElement(s),l.type="text/javascript",l.async=!0,l.id=o,l.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/OUEDH1xM8Xj8UFsRTdJCNqjscl_2B6rS93ioX8d3CZ4YtkEllIuCmmpI2EJE8Cl4NU.js"].join(""),n.parentNode.insertBefore(l,n))}
+)(window,document,"script","smcx-sdk");</script>
+<script src="http://www.digital.nyc/sites/default/files/js/js_MLVgtzZ1ORq9krYqkeOsRay6ou_T-0QZytivuM9tTT8.js"></script>
+    <script>
+    (function ($, Drupal, window, document, undefined) {
+      $(document).foundation();
+    })(jQuery, Drupal, this, this.document);
+  </script>
+</body>
+</html>
