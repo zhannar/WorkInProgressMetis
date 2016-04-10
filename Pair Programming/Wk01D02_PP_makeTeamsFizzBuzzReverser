@@ -1,0 +1,302 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Pair Programming: The function that creates pairs\n",
+    "Pairing, ideally, is good for both participants and for the work they produce.\n",
+    "\n",
+    "We would like to have everyone do some morning pairing with everyone else.\n",
+    "\n",
+    "Demo Problem\n",
+    "\n",
+    "The first problem is to determine a schedule of pairings so that everyone has a pair every day, and everyone eventually pairs with everyone else.\n",
+    "\n",
+    "Write a function that takes a list of names and returns a list of lists of tuples representing pairs. (Assume an even number of names, all distinct.) For example:\n",
+    "\n",
+    "pairs_for(['Andrea', 'Bob', 'Cassandra', 'Doug'])\n",
+    " [[('Bob', 'Cassandra'), ('Andrea', 'Doug')],\n",
+    "  [('Andrea', 'Bob'), ('Cassandra', 'Doug')],\n",
+    "  [('Andrea', 'Cassandra'), ('Bob', 'Doug')]]\n",
+    "\n",
+    "Source: https://github.com/thisismetis/nyc16_ds7/blob/master/01-benson/01-intro_python_benson/pair.md"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['Andrea', 'Bob', 'Cassandra', 'Doug']"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "list = ['Andrea', 'Bob', 'Cassandra', 'Doug']\n",
+    "list"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "def pairs_for(list):\n",
+    "    n = len(list)\n",
+    "    print n\n",
+    "    tuple_list = []\n",
+    "    # Chooses the first person\n",
+    "    for i in range(n/2):\n",
+    "        # Choose the second person/partner\n",
+    "        for j in range(n/2):\n",
+    "            tuple_list.append((list[i], list[n-1-j]))\n",
+    "    print tuple_list"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 74,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[('Andrea', 'Cassandra'), ('Andrea', 'Bob'), ('Andrea', 'Andrea'), ('Bob', 'Bob'), ('Bob', 'Andrea'), ('Cassandra', 'Andrea')]\n",
+      "6\n"
+     ]
+    }
+   ],
+   "source": [
+    "pairs_for(list)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "============================================================================================="
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Pair Problem: Fizz Buzz\n",
+    "\n",
+    "This is Fizz Buzz. It is perhaps the most well-known interview programming problem. You're not super likely to see this exact problem in an interview, but you should be familiar with it, and certainly able to solve it.\n",
+    "\n",
+    "Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.\n",
+    "For example, the output (just for the section 8 to 16) could look like this:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Source: https://github.com/thisismetis/nyc16_ds7/blob/master/01-benson/01-intro_python_benson/pair.md"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "def fizzbuzz(n):\n",
+    "    for i in range(1,n+1):\n",
+    "        if i % 5 == 0 and i % 3 == 0:\n",
+    "            print \"Fizzbuzz\"\n",
+    "        elif i % 5 == 0:\n",
+    "            print \"Buzz\"\n",
+    "        elif i % 3 == 0:\n",
+    "            print \"Fizz\"\n",
+    "        else:\n",
+    "            print i\n",
+    "            "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "2\n",
+      "Fizz\n",
+      "4\n",
+      "Buzz\n",
+      "Fizz\n",
+      "7\n",
+      "8\n",
+      "Fizz\n",
+      "Buzz\n",
+      "11\n",
+      "Fizz\n",
+      "13\n",
+      "14\n",
+      "Fizzbuzz\n",
+      "16\n",
+      "17\n",
+      "Fizz\n",
+      "19\n",
+      "Buzz\n"
+     ]
+    }
+   ],
+   "source": [
+    "fizzbuzz(20)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Pair Problem\n",
+    "\n",
+    "You may be asked to write code that reads from standard input and/or writes to standard output. For example, you will be asked to do that now.\n",
+    "\n",
+    "Write a program that reads from standard input and writes each line reversed to standard output. For example, if your Python script is called \"reverser.py\", you could do this at a command line:\n",
+    "\n",
+    "echo -e \"first line\\nsecond line\" | python reverser.py\n",
+    "And the output should be:\n",
+    "\n",
+    "enil tsrif\n",
+    "enil dnoces"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Working Answer:\n",
+    "\n",
+    "import sys\n",
+    "\n",
+    "def reverser(input):\n",
+    "\tinput_revesed = reversed(input)\n",
+    "\tresult =str()\n",
+    "\tfor x in input_revesed:\n",
+    "\t\tresult += x\n",
+    "\tprint result\n",
+    "\n",
+    "input = sys.stdin.readline()\n",
+    "reverser(input)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 134,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "def reverser(input):\n",
+    "    print input[::-1]\n",
+    "#    input_revesed = reversed(input)\n",
+    "#   result =str()\n",
+    "#    for x in input_revesed:\n",
+    "#        result += x\n",
+    "\n",
+    "#    print result"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 82,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "input = \"You may be asked to write code that reads from standard input and/or writes to standard output. For example, you will be asked to do that now.\\nWrite a program that reads from standard input and writes each line reversed to standard output. For example, if your Python script is called reverser.py, you could do this at a command line:\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 135,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      ":enil dnammoc a ta siht od dluoc uoy ,yp.resrever dellac si tpircs nohtyP ruoy fi ,elpmaxe roF .tuptuo dradnats ot desrever enil hcae setirw dna tupni dradnats morf sdaer taht margorp a etirW\n",
+      ".won taht od ot deksa eb lliw uoy ,elpmaxe roF .tuptuo dradnats ot setirw ro/dna tupni dradnats morf sdaer taht edoc etirw ot deksa eb yam uoY\n"
+     ]
+    }
+   ],
+   "source": [
+    "reverser(input)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 2",
+   "language": "python",
+   "name": "python2"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.11"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
